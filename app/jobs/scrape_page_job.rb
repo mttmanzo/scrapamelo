@@ -32,18 +32,18 @@ class ScrapePageJob < ApplicationJob
   end
 
   def make_calls
-    logger.info "Calling friends by phone"
-    account_sid = ENV['TWILIO_ACCOUNT']
-    auth_token = ENV['TWILIO_TOKEN']
+    # logger.info "Calling friends by phone"
+    # account_sid = ENV['TWILIO_ACCOUNT']
+    # auth_token = ENV['TWILIO_TOKEN']
 
-    @client = Twilio::REST::Client.new account_sid, auth_token
+    # @client = Twilio::REST::Client.new account_sid, auth_token
 
     # silvio
-    @client.api.account.calls.create(
-      from: ENV['PHONE_CALLER'],
-      to: ENV['PHONE1'],
-      url: 'https://demo.twilio.com/welcome/voice/'
-    )
+    # @client.api.account.calls.create(
+    #   from: ENV['PHONE_CALLER'],
+    #   to: ENV['PHONE1'],
+    #   url: 'https://demo.twilio.com/welcome/voice/'
+    # )
 
     # gdmn
     # @client.api.account.calls.create(
