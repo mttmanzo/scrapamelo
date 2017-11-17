@@ -3,7 +3,7 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 
   def send_notices
-      mail(to: ["silvio@relli.it", "mttmanzo@gmail.com", "eppedema@me.com"],
+      mail(to: ["silvio@relli.it", "mttmanzo@gmail.com", "eppedema@me.com", "eppedema@gmail.com"],
           subject: "Alert black hour eprice")
   end
 end
