@@ -62,6 +62,18 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "scrapamelo_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.sendgrid.net",
+    authentication: :plain,
+    domain: "heroku.com",
+    enable_starttls_auto: true,
+    password: ENV.fetch("SENDGRID_PASSWORD"),
+    port: "587",
+    user_name: ENV.fetch("SENDGRID_USERNAME")    
+  }
+  config.action_mailer.default_url_options = { host: ENV.fetch("APPLICATION_HOST") }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
