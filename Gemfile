@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -27,7 +27,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'wombat'
 gem 'nokogiri'
-gem 'selenium-webdriver'
+# gem 'selenium-webdriver'
 gem 'watir-webdriver'
 gem 'geckodriver-helper'
 gem 'phantomjs'
@@ -46,7 +46,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  # gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'letter_opener'
   gem 'dotenv-rails'
