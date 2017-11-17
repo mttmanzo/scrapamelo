@@ -10,5 +10,11 @@ bundle exec rake scrape_page
 
 
 brew services restart redis
-b sidekiq -r ./app/workers/hard_worker.rb
+
+bundle exec sidekiq -r ./app/workers/hard_worker.rb
+or
+bundle exec sidekiq
+
+
+bundle exec sidekiq -t 25
 
