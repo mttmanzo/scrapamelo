@@ -9,7 +9,7 @@ class ScrapePageJob < ApplicationJob
     sleep 3
     data = Nokogiri::HTML(browser.html)
     prices = data.css('.itemPrice').text
-
+    # binding.pry
     puts prices
   end
 end
