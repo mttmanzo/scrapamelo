@@ -1,9 +1,10 @@
 class ScrapePageJob < ApplicationJob
   queue_as :default
   include Wombat::Crawler
+  require 'twilio-ruby'
 
   def perform
-    puts "scrape the page"
+    logger.info "Scraping the page..."
     price_found = false
     browser = Watir::Browser.new :phantomjs
     browser.goto "https://www.eprice.it/black-hour"
@@ -14,13 +15,30 @@ class ScrapePageJob < ApplicationJob
       puts p
       # if p == '0,99'
       if p == '0,99'
-        puts "C'è roba bona!"
+        logger.info "C'è roba bona!"
         price_found = true
       end
     end
 
     if price_found
-      ApplicationMailer.send_notices().deliver_now
+      send_mail()
+      make_calls()
     end
+  end
+
+  def send_mail
+    logger.info "Sending mail notices"
+    ApplicationMailer.send_notices().deliver_now
+  end
+
+  def make_calls
+    logger.info "Calling friends by phone"
+    account_sid = ENV['TWILIO_ACCOUNT']
+    auth_token = ENV['TWILIO_TOKEN']
+
+    @client = Twilio::REST::Client.new account_sid, auth_token
+
+
+    # todo
   end
 end

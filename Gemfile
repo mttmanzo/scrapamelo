@@ -31,6 +31,7 @@ gem 'nokogiri'
 gem 'watir-webdriver'
 gem 'geckodriver-helper'
 gem 'phantomjs'
+gem 'twilio-ruby'
 
 # Use Redis adapter to run Action Cable in production
 # Use Redis adapter to run Action Cable in production
