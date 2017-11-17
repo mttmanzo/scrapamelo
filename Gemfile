@@ -31,6 +31,7 @@ gem 'selenium-webdriver'
 gem 'watir-webdriver'
 gem 'geckodriver-helper'
 gem 'phantomjs'
+
 # Use Redis adapter to run Action Cable in production
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -48,6 +49,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'letter_opener'
+  gem 'dotenv-rails'
 end
 
 group :development do
