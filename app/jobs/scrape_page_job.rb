@@ -46,11 +46,11 @@ class ScrapePageJob < ApplicationJob
     )
 
     # gdmn
-    # @client.api.account.calls.create(
-    #   from: ENV['PHONE_CALLER'],
-    #   to: ENV['PHONE2'],
-    #   url: 'https://demo.twilio.com/welcome/voice/'
-    # )
+    @client.api.account.calls.create(
+      from: ENV['PHONE_CALLER'],
+      to: ENV['PHONE2'],
+      url: 'https://demo.twilio.com/welcome/voice/'
+    )
 
     # matte
     # @client.api.account.calls.create(
