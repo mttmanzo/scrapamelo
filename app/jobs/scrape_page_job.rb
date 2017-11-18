@@ -1,7 +1,14 @@
-class ScrapePageJob < ApplicationJob
-  queue_as :default
+#class ScrapePageJob < ApplicationJob
+class ScrapePageJob # avoid inheriting from active job for dj recurring
+  # queue_as :default
   include Wombat::Crawler
   require 'twilio-ruby'
+
+  include Delayed::RecurringJob
+  run_every 1.minute
+  #run_at '11:00am'
+  timezone 'US/Pacific'
+  queue 'slow-jobs'
 
   def perform
     logger.info "Scraping the page..."

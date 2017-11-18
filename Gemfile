@@ -33,6 +33,8 @@ gem 'watir-webdriver'
 gem 'geckodriver-helper'
 gem 'phantomjs'
 gem 'twilio-ruby'
+gem 'delayed_job_active_record'
+gem 'delayed_job_recurring'
 
 # Use Redis adapter to run Action Cable in production
 # Use Redis adapter to run Action Cable in production
