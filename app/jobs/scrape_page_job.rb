@@ -10,7 +10,7 @@ class ScrapePageJob < ApplicationJob
     browser.goto "https://www.eprice.it/black-hour"
     sleep 3
     data = Nokogiri::HTML(browser.html)
-    prices = data.css('.itemPrice').text
+    prices = data.css('.superPrice').text
     prices.gsub('€', '').split(' ').each do |p|
       # puts p
       # if p == '37,99'
